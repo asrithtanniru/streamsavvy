@@ -32,7 +32,7 @@ import {
 import { NavLink, useNavigate, useLocation } from "react-router-dom"
 
 const navigationItems = [
-  { label: "Dashboard", href: "/", icon: LayoutDashboard },
+  { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { label: "Clients", href: "/clients", icon: Users },
   { label: "Projects", href: "/projects", icon: Building2 },
   { label: "Invoices", href: "/invoices", icon: FileText },
@@ -43,8 +43,8 @@ export default function DashboardLayout() {
   const navigate = useNavigate()
   const location = useLocation()
   const [sidebarOpen, setSidebarOpen] = useState(true)
-  const userName = "Asrith" // Replace with actual user data
-  const userEmail = "asrith@example.com" // Replace with actual user data
+  const userName = "Asrith" 
+  const userEmail = "asrith@example.com" 
 
   const handleLogout = () => {
     // Handle logout logic
@@ -54,7 +54,6 @@ export default function DashboardLayout() {
   // Determine the current nav label based on pathname
   const pathname = location.pathname || "/"
   const currentItem = navigationItems.find((item) => {
-    // exact match for root
     if (item.href === "/") return pathname === "/"
     return pathname === item.href || pathname.startsWith(item.href + "/")
   })
